@@ -8,7 +8,11 @@
 
 /* Custom properties/variables  */
 :root {
-
+    --bdazzled-blue: #3d5a80ff;
+    --pale-cerulean: #98c1d9ff;
+    --light-cyan: #e0fbfcff;
+    --burnt-sienna: #ee6c4dff;
+    --gunmetal: #293241ff;
 }
 
 main {
@@ -26,6 +30,57 @@ main {
     top: 0;
     left: 0;
     width: 100%;
+    background-color: var(--gunmetal);
+    border-bottom: 0.2em solid var(--burnt-sienna);
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-link {
+    display: block;
+    position:  relative;
+    overflow: hidden;
+    z-index: 1;
+    padding: 0.5em;
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+}
+
+.nav-link::before,
+.nav-link::after {
+    position: absolute;
+    width: 100%;
+    height: 0%;
+    left: 0;
+    right: 0;
+    background: var(--burnt-sienna);
+    transition: all .5s;
+    margin: auto;
+    content: '';
+    z-index: -1;
+    opacity: 0.75;
+}
+
+.nav-link::before {
+    top: 0;
+}
+
+.nav-link::after {
+    bottom: 0;
+}
+
+.nav-link:hover::before,
+.nav-link:hover::after {
+    height: 100%;
 }
 
 
