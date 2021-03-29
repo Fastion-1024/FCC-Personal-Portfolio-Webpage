@@ -8,11 +8,16 @@
 
 /* Custom properties/variables  */
 :root {
-    --bdazzled-blue: #3d5a80ff;
-    --pale-cerulean: #98c1d9ff;
-    --light-cyan: #e0fbfcff;
-    --burnt-sienna: #ee6c4dff;
-    --gunmetal: #293241ff;
+    --gunmetal-light: #303841ff;
+    --gunmetal-dark: #293241ff;
+    --polished-pine: #61988eff;
+    --ash-gray: #a0b2a6ff;
+    --fuzzy-wuzzy: #d16666ff;
+    --vermilion: #c84630ff;
+}
+
+body {
+    background-color: var(--ash-gray);
 }
 
 main {
@@ -30,8 +35,8 @@ main {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: var(--gunmetal);
-    border-bottom: 0.2em solid var(--burnt-sienna);
+    background-color: var(--gunmetal-dark);
+    border-bottom: 0.2em solid var(--vermilion);
 }
 
 .nav-list {
@@ -62,7 +67,7 @@ main {
     height: 0%;
     left: 0;
     right: 0;
-    background: var(--burnt-sienna);
+    background: var(--vermilion);
     transition: all .5s;
     margin: auto;
     content: '';
