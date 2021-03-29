@@ -1,7 +1,20 @@
 /*------------FONTS---------------*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
 
+/*----------Overall------------*/
 
-/*----------TYPOGRAPHY------------*/
+/* Base reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
 
 
 /*-----------GENERAL--------------*/
@@ -17,15 +30,7 @@
 }
 
 body {
-    background-color: var(--ash-gray);
-}
-
-main {
-    margin-top: 10em;
-}
-
-#welcome-section {
-    height: 100vh;
+    font-family: 'Roboto', sans-serif;
 }
 
 /*------------Navbar---------------*/
@@ -87,6 +92,41 @@ main {
 .nav-link:hover::after {
     height: 100%;
 }
+
+/*----------Welcome-Section----------*/
+#welcome-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(45deg, var(--ash-gray) 50%, #5C7063 100%);;
+    /* background-image: radial-gradient(at bottom left, var(--ash-gray), #789181, #5C7063); */
+
+}
+
+#welcome-section header {
+    text-align: center;
+}
+
+#welcome-section header h1 {
+    font-size: 2.6rem;
+    font-weight: 700;
+    margin: 0 0 0.1em 0;
+}
+
+#welcome-section header p {
+    color: var(--vermilion);
+    font-family: 'Berkshire Swash', cursive;
+    font-size: 1.4rem;
+    margin: 0;
+    font-style: italic;
+}
+
+/*----------Projects----------*/
+
+
 
 
 /*----------SMALL-SCREEN----------*/
