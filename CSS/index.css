@@ -14,6 +14,7 @@
 
 html {
     scroll-behavior: smooth;
+    font-family: 'Roboto', sans-serif;
 }
 
 
@@ -27,10 +28,6 @@ html {
     --ash-gray: #a0b2a6ff;
     --fuzzy-wuzzy: #d16666ff;
     --vermilion: #c84630ff;
-}
-
-body {
-    font-family: 'Roboto', sans-serif;
 }
 
 /*------------Navbar---------------*/
@@ -101,9 +98,7 @@ body {
     align-items: center;
     height: 100vh;
     width: 100%;
-    background-image: linear-gradient(45deg, var(--ash-gray) 50%, #5C7063 100%);;
-    /* background-image: radial-gradient(at bottom left, var(--ash-gray), #789181, #5C7063); */
-
+    background-image: linear-gradient(0deg, var(--ash-gray) 50%, #5C7063 100%);;
 }
 
 #welcome-section header {
@@ -126,117 +121,149 @@ body {
 
 /*----------Projects----------*/
 #projects {
-    background-color: var(--gunmetal-light);
+    background: linear-gradient(180deg, var(--ash-gray) 6em, var(--gunmetal-light) 6em);
+    padding-bottom: 5em;
 }
 
-.projects-container {
+#projects header {
+    font-size: 1.6em;
+    text-align: center;
+    color: white;
+    text-decoration: underline;
+}
+
+.projects-fader-container {
     display: grid;
     grid-template-areas: 
     'nav1 nav2 nav3 nav4'
     'img img img img';
-    margin: 1em 1em 2em 1em;
+    grid-row-gap: 1em;
+    width: 70vw;
+    margin: 1em auto auto auto;
+    justify-items: center;
 }
-.projects-container input[type="radio"] {
+
+.projects-fader-container label {
+    position: relative;
+    width: 4em;
+    height: 4em;
+    grid-column-gap: 1em;
+    background: var(--vermilion);
+    border: solid  0.3em var(--ash-gray);
+    border-radius: 3em;
+}
+
+.projects-fader-container label p {
+    font-size: 1.2rem;
+    color: white;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+.projects-fader-container label:hover {
+    border: solid 0.3em var(--gunmetal-light);
+}
+
+.project-image {
+    object-fit: cover;
+    max-width: 100%;
+    height: 100%;
+    margin: auto;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+}
+
+
+figure figcaption {
+    color: white;
+    font-size: 1.4rem;
+    text-align: center;
+    background: var(--gunmetal-dark);
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+    padding: 0.5em 0;
+}
+
+.projects-fader-container input {
     display: none;
 }
 
-#project1 + label {
-    display: grid;
+/* Assign the grid locations for each label and anchor in .projects-fader-container */
+.projects-fader-container label:first-of-type {
     grid-area: nav1;
 }
 
-#project2 + label {
-    display: grid;
+.projects-fader-container label:nth-of-type(2) {
     grid-area: nav2;
 }
 
-#project3 + label {
-    display: grid;
+.projects-fader-container label:nth-of-type(3) {
     grid-area: nav3;
 }
 
-#project4 + label {
-    display: grid;
+.projects-fader-container label:nth-of-type(4) {
     grid-area: nav4;
 }
 
-.projects-container label {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
-    text-align: center;
-    text-decoration: none;
-    background-color: var(--vermilion);
-    color: white;
-    padding: 1em;
-    margin: 1em;
-    border-radius: 1em;
-    box-shadow: 0.4em 0.4em 1em rgba(0, 0, 0, 0.8);
-    box-shadow: 0.8em 0.8em 2em rgba(0, 0, 0, 0.5);
-}
-
-#project1:checked ~ .project-images-container #project1-link img {
-    opacity: 1;
-}
-
-#project1:checked ~ .project-images-container #project2-link img,
-#project1:checked ~ .project-images-container #project3-link img,
-#project1:checked ~ .project-images-container #project4-link img {
-    opacity: 0;
-}
-
-#project2:checked ~ .project-images-container #project2-link img {
-    opacity: 1;
-}
-
-#project2:checked ~ .project-images-container #project1-link img,
-#project2:checked ~ .project-images-container #project3-link img,
-#project2:checked ~ .project-images-container #project4-link img {
-    opacity: 0;
-}
-
-#project3:checked ~ .project-images-container #project3-link img {
-    opacity: 1;
-}
-
-#project3:checked ~ .project-images-container #project1-link img,
-#project3:checked ~ .project-images-container #project2-link img,
-#project3:checked ~ .project-images-container #project4-link img {
-    opacity: 0;
-}
-
-#project4:checked ~ .project-images-container #project4-link img {
-    opacity: 1;
-}
-
-#project4:checked ~ .project-images-container #project1-link img,
-#project4:checked ~ .project-images-container #project2-link img,
-#project4:checked ~ .project-images-container #project3-link img {
-    opacity: 0;
-}
-
-.project-images-container {
-    display: grid;
+.projects-fader-container a {
     grid-area: img;
-    grid-template-areas: 'project-image';
-    position: relative;
-    width: 80vw;
-    margin: auto;
+    transition: opacity 3s ease-in-out;
+    text-decoration: none;
 }
 
-.project-images-container a {
-    display: grid;
-    grid-area: project-image;
+/* When radio button is checked. Corrosponding anchor will fade in */
+/* All other anchors in .projects-fader-container will fade out */
+#project1:checked ~ a:first-of-type {
+    opacity: 1;
+    z-index: 1;
 }
 
-.project-images-container a img {
-    object-fit: cover;
-    width: 100%;
-    max-height: 100%;
-    transition: all 2s ease-in-out;
+#project1:checked ~ a:nth-of-type(2),
+#project1:checked ~ a:nth-of-type(3),
+#project1:checked ~ a:nth-of-type(4) {
+    opacity: 0;
+    z-index: 0;
 }
 
+#project2:checked ~ a:nth-of-type(2) {
+    opacity: 1;
+    z-index: 1;
+}
 
+#project2:checked ~ a:first-of-type,
+#project2:checked ~ a:nth-of-type(3),
+#project2:checked ~ a:nth-of-type(4) {
+    opacity: 0;
+    z-index: 0;
+}
 
+#project3:checked ~ a:nth-of-type(3) {
+    opacity: 1;
+    z-index: 1;
+}
+
+#project3:checked ~ a:first-of-type,
+#project3:checked ~ a:nth-of-type(2),
+#project3:checked ~ a:nth-of-type(4) {
+    opacity: 0;
+    z-index: 0;
+}
+
+#project4:checked ~ a:nth-of-type(4) {
+    opacity: 1;
+    z-index: 1;
+}
+
+#project4:checked ~ a:first-of-type,
+#project4:checked ~ a:nth-of-type(2),
+#project4:checked ~ a:nth-of-type(3) {
+    opacity: 0;
+    z-index: 0;
+}
 
 /*----------SMALL-SCREEN----------*/
 @media only screen and (max-width: 768px) {
