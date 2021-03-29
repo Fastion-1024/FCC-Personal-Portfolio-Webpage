@@ -126,6 +126,27 @@ body {
 
 /*----------Projects----------*/
 
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 2rem;
+    justify-items: center;
+    width: 80%;
+    margin: auto;
+}
+
+.project-tile {
+    max-width: 500px;
+    padding: 5px;
+}
+
+.project-image {
+    height: auto;
+    width: 100%;
+    max-width: 500px;
+}
+
 
 
 
