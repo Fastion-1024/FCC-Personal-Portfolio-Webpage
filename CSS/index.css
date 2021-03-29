@@ -21,7 +21,7 @@ html {
 
 /* Custom properties/variables  */
 :root {
-    --gunmetal-light: #303841ff;
+    --gunmetal-light: #4E5B6Aff;
     --gunmetal-dark: #293241ff;
     --polished-pine: #61988eff;
     --ash-gray: #a0b2a6ff;
@@ -125,26 +125,114 @@ body {
 }
 
 /*----------Projects----------*/
+#projects {
+    background-color: var(--gunmetal-light);
+}
 
-.projects-grid {
+.projects-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-    grid-gap: 2rem;
-    justify-items: center;
-    width: 80%;
+    grid-template-areas: 
+    'nav1 nav2 nav3 nav4'
+    'img img img img';
+    margin: 1em 1em 2em 1em;
+}
+.projects-container input[type="radio"] {
+    display: none;
+}
+
+#project1 + label {
+    display: grid;
+    grid-area: nav1;
+}
+
+#project2 + label {
+    display: grid;
+    grid-area: nav2;
+}
+
+#project3 + label {
+    display: grid;
+    grid-area: nav3;
+}
+
+#project4 + label {
+    display: grid;
+    grid-area: nav4;
+}
+
+.projects-container label {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+    background-color: var(--vermilion);
+    color: white;
+    padding: 1em;
+    margin: 1em;
+    border-radius: 1em;
+    box-shadow: 0.4em 0.4em 1em rgba(0, 0, 0, 0.8);
+    box-shadow: 0.8em 0.8em 2em rgba(0, 0, 0, 0.5);
+}
+
+#project1:checked ~ .project-images-container #project1-link img {
+    opacity: 1;
+}
+
+#project1:checked ~ .project-images-container #project2-link img,
+#project1:checked ~ .project-images-container #project3-link img,
+#project1:checked ~ .project-images-container #project4-link img {
+    opacity: 0;
+}
+
+#project2:checked ~ .project-images-container #project2-link img {
+    opacity: 1;
+}
+
+#project2:checked ~ .project-images-container #project1-link img,
+#project2:checked ~ .project-images-container #project3-link img,
+#project2:checked ~ .project-images-container #project4-link img {
+    opacity: 0;
+}
+
+#project3:checked ~ .project-images-container #project3-link img {
+    opacity: 1;
+}
+
+#project3:checked ~ .project-images-container #project1-link img,
+#project3:checked ~ .project-images-container #project2-link img,
+#project3:checked ~ .project-images-container #project4-link img {
+    opacity: 0;
+}
+
+#project4:checked ~ .project-images-container #project4-link img {
+    opacity: 1;
+}
+
+#project4:checked ~ .project-images-container #project1-link img,
+#project4:checked ~ .project-images-container #project2-link img,
+#project4:checked ~ .project-images-container #project3-link img {
+    opacity: 0;
+}
+
+.project-images-container {
+    display: grid;
+    grid-area: img;
+    grid-template-areas: 'project-image';
+    position: relative;
+    width: 80vw;
     margin: auto;
 }
 
-.project-tile {
-    max-width: 500px;
-    padding: 5px;
+.project-images-container a {
+    display: grid;
+    grid-area: project-image;
 }
 
-.project-image {
-    height: auto;
+.project-images-container a img {
+    object-fit: cover;
     width: 100%;
-    max-width: 500px;
+    max-height: 100%;
+    transition: all 2s ease-in-out;
 }
 
 
