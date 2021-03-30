@@ -107,7 +107,7 @@ html {
 }
 
 #welcome-section header h1 {
-    font-size: 2.6rem;
+    font-size: 3rem;
     font-weight: 700;
     margin: 0 0 0.1em 0;
 }
@@ -115,7 +115,7 @@ html {
 #welcome-section header p {
     color: var(--vermilion);
     font-family: 'Berkshire Swash', cursive;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     margin: 0;
     font-style: italic;
 }
@@ -129,7 +129,7 @@ html {
 /*----------Projects----------*/
 #projects {
     background: linear-gradient(180deg, var(--ash-gray) 6em, var(--gunmetal-light) 6em);
-    padding-bottom: 5em;
+    padding-bottom: 4em;
 }
 
 #projects header {
@@ -139,7 +139,7 @@ html {
     text-decoration: underline;
 }
 
-.projects-fader-container {
+.project-tile {
     display: grid;
     grid-template-areas: 
     'nav1 nav2 nav3 nav4'
@@ -150,7 +150,7 @@ html {
     justify-items: center;
 }
 
-.projects-fader-container label {
+.project-tile label {
     position: relative;
     width: 4em;
     height: 4em;
@@ -160,7 +160,7 @@ html {
     border-radius: 3em;
 }
 
-.projects-fader-container label p {
+.project-tile label p {
     font-size: 1.2rem;
     color: white;
     text-align: center;
@@ -171,7 +171,7 @@ html {
     transform: translate(-50%, -50%)
 }
 
-.projects-fader-container label:hover {
+.project-tile label:hover {
     border: solid 0.3em var(--gunmetal-light);
 }
 
@@ -195,35 +195,35 @@ figure figcaption {
     padding: 0.5em 0;
 }
 
-.projects-fader-container input {
+.project-tile input {
     display: none;
 }
 
-/* Assign the grid locations for each label and anchor in .projects-fader-container */
-.projects-fader-container label:first-of-type {
+/* Assign the grid locations for each label and anchor in .project-tile */
+.project-tile label:first-of-type {
     grid-area: nav1;
 }
 
-.projects-fader-container label:nth-of-type(2) {
+.project-tile label:nth-of-type(2) {
     grid-area: nav2;
 }
 
-.projects-fader-container label:nth-of-type(3) {
+.project-tile label:nth-of-type(3) {
     grid-area: nav3;
 }
 
-.projects-fader-container label:nth-of-type(4) {
+.project-tile label:nth-of-type(4) {
     grid-area: nav4;
 }
 
-.projects-fader-container a {
+.project-tile a {
     grid-area: img;
     transition: opacity 3s ease-in-out;
     text-decoration: none;
 }
 
 /* When radio button is checked. Corrosponding anchor will fade in */
-/* All other anchors in .projects-fader-container will fade out */
+/* All other anchors in .project-tile will fade out */
 #project1:checked ~ a:first-of-type {
     opacity: 1;
     z-index: 1;
@@ -272,6 +272,41 @@ figure figcaption {
     z-index: 0;
 }
 
+#projects footer {
+    text-align: center;
+}
+
+#projects footer a {
+    margin: 1em auto;
+    display: inline-block;
+    padding: 0.4em 1em;
+    border-radius: 2px;
+    font-size: 1.4rem;
+    text-decoration: none;
+    background: var(--polished-pine);
+    border-radius: 0.4em;
+    border: solid 0.15em var(--gunmetal-dark);
+    transition: border-radius 0.3s ease-in-out;
+}
+
+#projects footer a i {
+    transform: translateX(0.3em);
+    transition: all 0.2s ease-in-out;
+}
+
+#projects footer a:hover {
+    border-top-right-radius: 1em;
+    border-bottom-right-radius: 1em;
+}
+
+#projects footer a:hover > i {
+    transform: translateX(0.6em);
+}
+
+#projects footer a:visited {
+    color: whitesmoke;
+}
+
 /*----------Contact-Section----------*/
 #contact-section {
     text-align: center;
@@ -281,6 +316,14 @@ figure figcaption {
 
 #contact-section header {
     color: white;
+}
+
+#contact-section header h2 {
+    font-size: 2rem;
+}
+
+#contact-section header p {
+    font-size: 1.2rem;
 }
 
 #contact-section form {
@@ -341,6 +384,15 @@ figure figcaption {
 }
 
 /*----------SMALL-SCREEN----------*/
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 811px) {
 
+    #projects {
+        background: linear-gradient(180deg, var(--ash-gray) 9em, var(--gunmetal-light) 9em);
+    }
+}
+
+@media only screen and (max-width: 443px) {
+    #projects {
+        background: linear-gradient(180deg, var(--ash-gray) 12em, var(--gunmetal-light) 12em);
+    }
 }
