@@ -39,7 +39,7 @@ html {
     width: 100%;
     background-color: var(--gunmetal-dark);
     border-bottom: 0.2em solid var(--vermilion);
-    z-index: 1;
+    z-index: 5;
 }
 
 .nav-list {
@@ -276,6 +276,7 @@ figure figcaption {
 #contact-section {
     text-align: center;
     background: linear-gradient(180deg, var(--gunmetal-light) 12em, var(--ash-gray) 12em);
+    padding-bottom: 4em;
 }
 
 #contact-section header {
@@ -317,6 +318,27 @@ figure figcaption {
 
 /*----------Footer-Section----------*/
 
+.page-footer {
+    background-color: var(--gunmetal-dark);
+    border-top: solid 0.2em var(--vermilion);
+    padding: 0.6em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.page-footer a {
+    margin: auto 1em;
+    color: white;
+}
+
+.page-footer a:hover {
+    transform:translateY(-0.4em)
+}
+
+.page-footer a:visited {
+    color: white;
+}
 
 /*----------SMALL-SCREEN----------*/
 @media only screen and (max-width: 768px) {
