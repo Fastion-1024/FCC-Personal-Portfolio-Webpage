@@ -272,6 +272,52 @@ figure figcaption {
     z-index: 0;
 }
 
+/*----------Contact-Section----------*/
+#contact-section {
+    text-align: center;
+    background: linear-gradient(180deg, var(--gunmetal-light) 12em, var(--ash-gray) 12em);
+}
+
+#contact-section header {
+    color: white;
+}
+
+#contact-section form {
+    display: flex;
+    flex-direction: column;
+    margin: 1em 20vw;
+    background: var(--gunmetal-dark);
+    padding: 1.4em;
+    border-radius: 4em;
+    border: solid var(--polished-pine);
+}
+
+.form-text-input,
+.form-area-input,
+.form-button-submit {
+    margin-top: 1em;
+}
+
+.form-text-input,
+.form-area-input {
+    padding: 0.2em;
+    background-color: whitesmoke;
+}
+
+.form-button-submit {
+    color: whitesmoke;
+    font-size: 1em;
+    font-weight: 700;
+    padding: 0.2em;
+    margin-bottom: 1em;
+    border-radius: 1em;
+    background-color: var(--vermilion);
+    border: solid var(--polished-pine);
+}
+
+/*----------Footer-Section----------*/
+
+
 /*----------SMALL-SCREEN----------*/
 @media only screen and (max-width: 768px) {
 
