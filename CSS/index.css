@@ -218,7 +218,7 @@ figure figcaption {
 
 .project-tile a {
     grid-area: img;
-    transition: opacity 3s ease-in-out;
+    transition: opacity 2s ease-in-out;
     text-decoration: none;
 }
 
@@ -277,6 +277,7 @@ figure figcaption {
 }
 
 #projects footer a {
+    color: whitesmoke;
     margin: 1em auto;
     display: inline-block;
     padding: 0.4em 1em;
@@ -332,7 +333,7 @@ figure figcaption {
     margin: 1em 20vw;
     background: var(--gunmetal-dark);
     padding: 1.4em;
-    border-radius: 4em;
+    border-radius: 2em;
     border: solid var(--polished-pine);
 }
 
