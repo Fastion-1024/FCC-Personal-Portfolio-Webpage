@@ -39,6 +39,7 @@ html {
     width: 100%;
     background-color: var(--gunmetal-dark);
     border-bottom: 0.2em solid var(--vermilion);
+    z-index: 1;
 }
 
 .nav-list {
@@ -117,6 +118,12 @@ html {
     font-size: 1.4rem;
     margin: 0;
     font-style: italic;
+}
+
+.avatar {
+    width: 16em;
+    height: auto;
+    margin-bottom: 2em;
 }
 
 /*----------Projects----------*/
